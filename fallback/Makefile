@@ -1,13 +1,11 @@
 
-SWFMILL     := swfmill
-MTASC       := mtasc
-
-MTASCSTDLIB := /usr/share/mtasc/std
+MXMLC     := mxmlc
 
 main:
-	$(SWFMILL) simple src/jscam.xml jscam.swf
-	$(MTASC) -v -swf jscam.swf -main jscam.as -version 8 -cp src -cp $(MTASCSTDLIB)
+	$(MXMLC) src/JSCam.as -output ./jscam.swf
+
+debug:
+	$(MXMLC) -debug=true src/JSCam.as -output ./jscam.swf
 
 clean:
 	rm -f jscam.swf
-
