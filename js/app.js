@@ -64,9 +64,10 @@ $(function () {
 		height: 240,
 
 		mode: "callback",
-		// callback | save | stream
-		swffile: "fallback/jscam_canvas_only.swf",
-		quality: 85,
+		// callback | stream
+		swffile: "fallback/jscam.swf",
+		quality: "high",
+		// low | medium | high | best
 		context: "",
 
 		debug: function () {},

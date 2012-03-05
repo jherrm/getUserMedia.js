@@ -48,7 +48,7 @@ getUserMedia = function (options, successCallback, errorCallback) {
 
 			cam = document.getElementById('XwebcamXobjectX');
 
-			if (cam.capture !== undefined) {
+			if (typeof cam.capture !== 'undefined') {
 
 				/* Simple callback methods are not allowed :-/ */
 				options.capture = function (x) {
@@ -56,9 +56,9 @@ getUserMedia = function (options, successCallback, errorCallback) {
 						return cam.capture(x);
 					} catch (e) {}
 				}
-				options.save = function (x) {
+				options.save = function () {
 					try {
-						return cam.save(x);
+						return cam.save();
 					} catch (e) {}
 				}
 				options.setCamera = function (x) {
